@@ -1,0 +1,55 @@
+{
+  "name": "electron-react-node-boilerplate",
+  "version": "1.0.0",
+  "description": "An Electron application with React and Node",
+  "main": "./main.js",
+  "homepage": "./",
+  "scripts": {
+    "start": "concurrently \"npm run react-start\" \"npm run server-start\" \"wait-on http://localhost:3000 && npm run electron-dev\"",
+    "react-build": "react-app-rewired build",
+    "react-start": "BROWSER=none react-app-rewired start",
+    "server-build": "babel server --out-dir build-server",
+    "server-start": "nodemon --watch server --exec babel-node server/server.js",
+    "electron-dev": "node scripts/dev.js scripts/start.js",
+    "electron-pack": "electron-builder -c.extraMetadata.main='./main.js'",
+    "preelectron-pack": "npm run react-build && npm run server-build"
+  },
+  "author": "tbuyse",
+  "devDependencies": {
+    "react-app-rewired": "^2.1.3",
+    "customize-cra": "^0.2.12",
+    "react-scripts": "3.0.1",
+    "concurrently": "^4.1.0",
+    "wait-on": "^3.2.0",
+    "electron": "^5.0.2",
+    "electron-builder": "^20.41.0",
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/node": "^7.4.5",
+    "@babel/preset-env": "^7.4.4"
+  },
+  "dependencies": {
+    "app-module-path": "^2.2.0",
+    "axios": "^0.18.0",
+    "cors": "^2.8.5",
+    "electron-is-dev": "^1.1.0",
+    "express": "^4.17.1",
+    "nodemon": "^1.19.1",
+    "piping": "^1.0.0-rc.4",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "build": {
+    "appId": "com.electron-react-node",
+    "files": [
+      "build/**/**/*",
+      "build-server/**/**/*",
+      "node_modules/**/*",
+      "./main.js"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  },
+  "browserslist": []
+}
