@@ -3,7 +3,7 @@
 **Description**
 
 Boilerplate project to quickly get started with Electron, React and Node
-Contains following features:
+containing following features:
 
 - Electron v5
 - React using react-app-rewired
