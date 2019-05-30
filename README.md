@@ -1,5 +1,7 @@
 # electron-react-node-boilerblate
 
+Walkthrough described at https://medium.com/jstack-eu/using-electron-with-react-and-node-b498fbf23272
+
 **Description**
 
 Boilerplate project to quickly get started with Electron, React and Node
