@@ -33,7 +33,7 @@
     "axios": "^0.18.0",
     "cors": "^2.8.5",
     "electron-is-dev": "^1.1.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "nodemon": "^1.19.1",
     "piping": "^1.0.0-rc.4",
     "react": "^16.8.6",
